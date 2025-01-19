@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { AlertCircle } from "lucide-react";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { useCartStore } from "@/app/store/useCart";
 
 const indianStates = [
   "Andhra Pradesh",
@@ -67,9 +67,11 @@ const initialState = {
 };
 const Checkout = () => {
   const [formData, setFormData] = useState(initialState);
+  const [errors, setErrors] = useState({});
+
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  const [errors, setErrors] = useState({});
+  const { items, totalPrice } = useCartStore();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -283,6 +285,38 @@ const Checkout = () => {
                     Cart details
                   </CardTitle>
                 </CardHeader>
+                <CardContent className="flex flex-col gap-5">
+                  <div className="divide-y divide-gray-200">
+                    {items?.map((item) => (
+                      <div key={item?.id} className="py-6 flex items-end">
+                        <img
+                          src={item?.images?.[0]?.src}
+                          alt={item?.name}
+                          className="h-24 w-24 object-cover rounded-md"
+                        />
+                        <div className="ml-6 flex-1 flex flex-col gap-2">
+                          <h3 className="text-lg font-semibold text-gray-900">
+                            {item?.name}
+                          </h3>
+                          <p className="text-gray-600">
+                            Quantity: {item?.quantity}
+                          </p>
+                          <p className="text-gray-600">
+                            ₹{item?.price.toFixed(2)}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex justify-start items-center gap-2">
+                    <span className="text-lg font-semibold text-gray-900">
+                      Total:
+                    </span>
+                    <span className="text-2xl font-bold text-blue-600">
+                      ₹{totalPrice.toFixed(2)}
+                    </span>
+                  </div>
+                </CardContent>
               </Card>
             </div>
           </CardContent>

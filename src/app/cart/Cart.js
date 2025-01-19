@@ -1,17 +1,13 @@
 "use client";
 import React from "react";
-import { useCart } from "@/app/context/CartContext";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCartStore } from "@/app/store/useCart";
 
 export const Cart = () => {
-  const { state, dispatch } = useCart();
-
   const router = useRouter();
-  const { items, updateQuantity, removeFromCart, totalItems, totalPrice } =
-    useCartStore();
+  const { items, updateQuantity, removeFromCart, totalPrice } = useCartStore();
 
   if (items?.length === 0) {
     return (
