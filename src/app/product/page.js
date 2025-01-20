@@ -1,8 +1,8 @@
 import React from "react";
-import Terms from "./Terms";
+import Product from "./Product";
 
 function page() {
-  return <Terms />;
+  return <Product />;
 }
 
 export default page;

@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { CartProvider } from "./context/CartContext";
+import { CartProvider } from "../context/CartContext";
 import Navbar from "./components/Navbar";
 import ContactIcon from "./components/ContactIcon";
 import Footer from "./components/Footer";

@@ -15,7 +15,7 @@ const Footer = () => {
           </div>
 
           {/* Links Section */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center">
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
               <a
@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Section */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-end">
             <h3 className="font-semibold text-lg mb-4">Connect With Us</h3>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-blue-400 transition-colors">

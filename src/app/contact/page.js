@@ -1,8 +1,7 @@
 import React from "react";
-import Terms from "./Terms";
-
+import Contact from "./Contact";
 function page() {
-  return <Terms />;
+  return <Contact />;
 }
 
 export default page;

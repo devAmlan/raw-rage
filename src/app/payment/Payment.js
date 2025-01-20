@@ -5,8 +5,15 @@ import { db } from "@/utils/db";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { AlertCircle } from "lucide-react";
+import {
+  AlertCircle,
+  CircleChevronRight,
+  CircleChevronLeft,
+  Info,
+} from "lucide-react";
 import { useCartStore } from "@/app/store/useCart";
+import qrCode from "../../../public/assets/qr-code.jpg";
+import Image from "next/image";
 
 const initialState = {
   utrId: "",
@@ -21,6 +28,7 @@ const FormError = ({ message }) => (
 
 function Payment() {
   const [errors, setErrors] = useState({});
+  const [step, setStep] = useState(1);
   const [formData, setFormData] = useState(initialState);
 
   const { totalPrice, clearCart } = useCartStore();
@@ -64,18 +72,38 @@ function Payment() {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-  return (
-    <main className="min-h-screen flex justify-center items-center max-w-7xl md:mx-auto mx-5">
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base font-bold">
-            Please confirm your payment by entering UTR number
-          </CardTitle>
-        </CardHeader>
+
+  const onChangeStep = (stepNumber) => {
+    setStep(stepNumber);
+  };
+
+  const stepContainer = {
+    1: (
+      <>
+        <CardContent className="flex flex-col gap-4">
+          <Image src={qrCode} className="w-full h-80" alt="qr-code" />
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors"
+            onClick={() => setStep(2)}
+          >
+            Next
+          </button>
+        </CardContent>
+      </>
+    ),
+    2: (
+      <>
         <CardContent className="flex flex-col">
           <div className="space-y-4 w-full">
             <div className="space-y-2">
-              <Label htmlFor="utrId">Enter UTR number</Label>
+              <Label
+                htmlFor="utrId"
+                className="flex justify-start items-center gap-2"
+              >
+                <span>Enter UTR number</span>
+                <Info size={16} className="cursor-pointer" />
+              </Label>
               <Input
                 id="utrId"
                 name="utrId"
@@ -94,6 +122,30 @@ function Payment() {
             </button>
           </div>
         </CardContent>
+      </>
+    ),
+  };
+  return (
+    <main className="min-h-screen flex justify-center items-center flex-col max-w-7xl md:mx-auto mx-5">
+      <Card>
+        <CardHeader>
+          <div className="w-full flex justify-start items-start gap-1 text-gray-600">
+            <CircleChevronLeft
+              className="cursor-pointer"
+              onClick={() => onChangeStep(1)}
+            />
+            <CircleChevronRight
+              className="cursor-pointer"
+              onClick={() => onChangeStep(2)}
+            />
+          </div>
+          <CardTitle className="text-base font-bold">
+            {step === 1
+              ? "Please Scan the QR code or pay on this UPI ID"
+              : "Please confirm your payment by entering UTR number"}
+          </CardTitle>
+        </CardHeader>
+        {stepContainer[step]}
       </Card>
     </main>
   );

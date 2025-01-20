@@ -1,6 +1,6 @@
 import React from "react";
 import Checkout from "./Checkout";
-import RouteProtection from "../context/RouteProtection";
+import RouteProtection from "../../context/RouteProtection";
 function page() {
   return (
     <RouteProtection redirectPath="/">

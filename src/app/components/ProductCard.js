@@ -24,9 +24,9 @@ export const ProductCard = ({ product }) => {
             {product.name}
           </h3>
         </Link>
-        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+        {/* <p className="text-gray-600 text-sm mb-4 line-clamp-2">
           {product.slug}
-        </p>
+        </p> */}
         <div className="flex items-center justify-between">
           <span className="text-lg font-bold text-blue-600">
             ₹{product.price.toFixed(2)}

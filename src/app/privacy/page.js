@@ -1,8 +1,7 @@
 import React from "react";
-import Terms from "./Terms";
-
+import Privacy from "./Privacy";
 function page() {
-  return <Terms />;
+  return <Privacy />;
 }
 
 export default page;

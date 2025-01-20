@@ -7,6 +7,7 @@ import { useCartStore } from "@/app/store/useCart";
 function RouteProtection({ children, redirectPath = "/" }) {
   const router = useRouter();
   const { items } = useCartStore();
+  console.log(items);
 
   useEffect(() => {
     // Check if items array is empty

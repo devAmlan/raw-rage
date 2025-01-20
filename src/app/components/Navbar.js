@@ -22,6 +22,7 @@ import { ShoppingCart, Menu } from "lucide-react";
 
 import { useCartStore } from "@/app/store/useCart";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Navbar = () => {
   const { totalItems } = useCartStore();
@@ -47,30 +48,30 @@ const Navbar = () => {
                   <div className="grid gap-3 p-4 w-[400px]">
                     <div className="grid grid-cols-1 gap-2">
                       <NavigationMenuLink asChild>
-                        <a
-                          href="#"
+                        <Link
+                          href="/product/smra"
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         >
                           <div className="text-sm font-medium leading-none">
-                            Whey Protein
+                            SMRAs
                           </div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Premium quality whey protein for muscle growth
+                            Empowering Health with Insightful Risk Assessment.
                           </p>
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <a
-                          href="#"
+                        <Link
+                          href="/product/steroids"
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         >
                           <div className="text-sm font-medium leading-none">
-                            Plant Protein
+                            Steroids
                           </div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Vegan-friendly protein supplements
+                            Unlocking Strength, Enhancing Performance.
                           </p>
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </div>
                   </div>
@@ -127,10 +128,10 @@ const Navbar = () => {
                 </SheetHeader>
                 <div className="flex flex-col space-y-4 mt-4">
                   <Button variant="ghost" className="justify-start">
-                    Whey Protein
+                    SMRAs
                   </Button>
                   <Button variant="ghost" className="justify-start">
-                    Plant Protein
+                    Steroids
                   </Button>
                   <Button variant="ghost" className="justify-start">
                     About
