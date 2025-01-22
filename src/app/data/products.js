@@ -1,4 +1,20 @@
 import { nanoid } from "nanoid";
+import productOneImageOne from "../../../public/assets/product-one/image-1.jpg";
+import productTwoImageOne from "../../../public/assets/product-two/image-1.jpg";
+import productThreeImageOne from "../../../public/assets/product-three/image-1.jpg";
+import productThreeImageTwo from "../../../public/assets/product-three/image-2.jpg";
+import productThreeImageThree from "../../../public/assets/product-three/image-3.jpg";
+import productFourImageOne from "../../../public/assets/product-four/image-1.jpg";
+import productFiveImageOne from "../../../public/assets/product-five/image-1.jpg";
+import productSixImageOne from "../../../public/assets/product-six/image-1.jpg";
+import productSevenImageOne from "../../../public/assets/product-seven/image-1.jpg";
+import productEightImageOne from "../../../public/assets/product-eight/image-1.jpg";
+import productEightImageTwo from "../../../public/assets/product-eight/image-2.jpg";
+import productEightImageThree from "../../../public/assets/product-eight/image-3.jpg";
+import productNineImageOne from "../../../public/assets/product-nine/image-1.jpg";
+import productTenImageOne from "../../../public/assets/product-ten/image-1.jpg";
+import productElevenImageOne from "../../../public/assets/product-eleven/image-1.jpeg";
+import productTwelveImageOne from "../../../public/assets/product-twelve/image-1.jpeg";
 
 export const products = [
   {
@@ -9,16 +25,8 @@ export const products = [
     description: "",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&q=80&w=800",
+        src: productOneImageOne,
         alt: "Slide 1",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
-        alt: "Slide 2",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?auto=format&fit=crop&q=80&w=800",
-        alt: "Slide 3",
       },
     ],
     category: "SMRAs",
@@ -85,13 +93,13 @@ export const products = [
   },
   {
     id: nanoid(),
-    name: "Anavar",
-    slug: "ana-var",
+    name: "Anawar",
+    slug: "ana-war",
     price: 1999.0,
     description: "",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&q=80&w=800",
+        src: productTwoImageOne,
         alt: "Slide 1",
       },
     ],
@@ -150,8 +158,16 @@ export const products = [
       "Slow-releasing micellar casein protein perfect for overnight muscle recovery and growth.",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
+        src: productThreeImageOne,
         alt: "Slide 1",
+      },
+      {
+        src: productThreeImageTwo,
+        alt: "Slide 2",
+      },
+      {
+        src: productThreeImageThree,
+        alt: "Slide 3",
       },
     ],
     category: "Steriods",
@@ -202,7 +218,7 @@ export const products = [
     description: "",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
+        src: productFourImageOne,
         alt: "Slide 1",
       },
     ],
@@ -302,7 +318,7 @@ export const products = [
     description: "",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
+        src: productFiveImageOne,
         alt: "Slide 1",
       },
     ],
@@ -375,23 +391,7 @@ export const products = [
     description: "",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
-        alt: "Slide 1",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
-        alt: "Slide 1",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
-        alt: "Slide 1",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
-        alt: "Slide 1",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
+        src: productSixImageOne,
         alt: "Slide 1",
       },
     ],
@@ -444,15 +444,7 @@ export const products = [
     description: "",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
-        alt: "Slide 1",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
-        alt: "Slide 1",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
+        src: productSevenImageOne,
         alt: "Slide 1",
       },
     ],
@@ -505,8 +497,16 @@ export const products = [
     description: "",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
+        src: productEightImageOne,
         alt: "Slide 1",
+      },
+      {
+        src: productEightImageTwo,
+        alt: "Slide 2",
+      },
+      {
+        src: productEightImageThree,
+        alt: "Slide 3",
       },
     ],
     category: "SMRAs",
@@ -558,7 +558,7 @@ export const products = [
     description: "",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
+        src: productNineImageOne,
         alt: "Slide 1",
       },
     ],
@@ -632,7 +632,7 @@ export const products = [
     description: "",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
+        src: productTenImageOne,
         alt: "Slide 1",
       },
     ],
@@ -680,7 +680,7 @@ export const products = [
     description: "",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&q=80&w=800",
+        src: productElevenImageOne,
         alt: "Slide 1",
       },
     ],
@@ -714,5 +714,46 @@ export const products = [
         ],
       },
     },
+  },
+  {
+    id: nanoid(),
+    name: "Ultimate PCT Stack:",
+    slug: "ultimate-pct-stack",
+    price: 5500.0,
+    dosing: [
+      {
+        label: "PCT-Matrix",
+        description: "2 tablets everyday",
+      },
+      {
+        label: "Letrox-2000",
+        description: "2mg thrice a week",
+      },
+      {
+        label: "Cabergline",
+        description: " 1 tablet everyday",
+      },
+      {
+        label: "Heucotec",
+        description: "1000iu Everyday",
+      },
+      {
+        label: "Livodrome",
+        description: "2 capsules twice a day after meals",
+      },
+      {
+        label: "Essattovite Men",
+        description: "2 capsules with breakfast",
+      },
+    ],
+    description: "",
+    images: [
+      {
+        src: productTwelveImageOne,
+        alt: "Slide 1",
+      },
+    ],
+    category: "PCT",
+    code: "CODE3",
   },
 ];

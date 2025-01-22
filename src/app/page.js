@@ -2,19 +2,43 @@
 import { products } from "@/app/data/products";
 import { ProductCard } from "./components/ProductCard";
 import { useRouter } from "next/navigation";
+import HeroImageSlider from "./components/HeroImageSlider";
+import heroImageOne from "../../public/assets/hero-slide-1.jpg";
+import heroImageTwo from "../../public/assets/hero-slide-2.jpg";
+import heroImageThree from "../../public/assets/hero-slide-3.jpg";
+import heroImageFour from "../../public/assets/hero-slide-4.jpg";
 
 export default function Home() {
   const router = useRouter();
+  const heroImages = [
+    {
+      src: heroImageOne,
+      alt: "Slide 1",
+    },
+    {
+      src: heroImageTwo,
+      alt: "Slide 2",
+    },
+    {
+      src: heroImageThree,
+      alt: "Slide 3",
+    },
+    {
+      src: heroImageFour,
+      alt: "Slide 4",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <HeroImageSlider images={heroImages} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="md:text-4xl text-2xl font-bold text-gray-900 mb-4">
             Unlock Your Full Potential with Premium Steroids and Personalized
             Health Insights
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="md:text-lg text-base text-gray-600">
             Discover high-quality steroids and Specialized Medical Risk
             Assessments (SMRAs) that empower you to enhance your fitness,
             performance, and overall well-being. Start your journey towards a

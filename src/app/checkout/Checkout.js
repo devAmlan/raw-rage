@@ -13,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { AlertCircle } from "lucide-react";
 import { useCartStore } from "@/app/store/useCart";
+import { useRouter } from "next/navigation";
 
 const indianStates = [
   "Andhra Pradesh",
@@ -73,6 +74,8 @@ const Checkout = () => {
 
   const { items, totalPrice } = useCartStore();
 
+  const router = useRouter();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -125,6 +128,8 @@ const Checkout = () => {
     if (validateForm()) {
       console.log("Form submitted:", formData);
       setFormData(initialState);
+      router.push("/payment");
+    } else {
     }
   };
 
@@ -290,7 +295,7 @@ const Checkout = () => {
                     {items?.map((item) => (
                       <div key={item?.id} className="py-6 flex items-end">
                         <img
-                          src={item?.images?.[0]?.src}
+                          src={item?.images?.[0]?.src?.src}
                           alt={item?.name}
                           className="h-24 w-24 object-cover rounded-md"
                         />

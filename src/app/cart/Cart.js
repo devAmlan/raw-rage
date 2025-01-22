@@ -34,7 +34,7 @@ export const Cart = () => {
             {items?.map((item) => (
               <div key={item?.id} className="p-6 flex items-center">
                 <img
-                  src={item?.images?.[0]?.src}
+                  src={item?.images?.[0]?.src?.src}
                   alt={item?.name}
                   className="h-24 w-24 object-cover rounded-md"
                 />

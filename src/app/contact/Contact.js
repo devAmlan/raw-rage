@@ -24,14 +24,16 @@ function Contact() {
             </h2>
 
             <div className="flex items-center space-x-4 mb-4">
-              <Mail className="text-xl text-gray-600" />
-              <span className="text-lg text-gray-700">info@example.com</span>
+              <Mail className="w-5 h-5 text-gray-600" />
+              <span className="text-lg text-gray-700">
+                mashal7864@gmail.com
+              </span>
             </div>
 
             <div className="flex items-center space-x-4 mb-4">
-              <MapPin className="text-xl text-gray-600" />
+              <MapPin className="w-5 h-5 text-gray-600" />
               <span className="text-lg text-gray-700">
-                123 Main St, City, Country
+                Barakhamba Rd, Connaught Place,New Delhi
               </span>
             </div>
 
@@ -42,7 +44,7 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-blue-600"
               >
-                <Facebook className="text-2xl" />
+                <Facebook className="w-5 h-5" />
               </a>
               <a
                 href="https://twitter.com"
@@ -50,7 +52,7 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-blue-400"
               >
-                <Twitter className="text-2xl" />
+                <Twitter className="w-5 h-5" />
               </a>
               <a
                 href="https://instagram.com"
@@ -58,7 +60,7 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-pink-500"
               >
-                <Instagram className="text-2xl" />
+                <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="https://linkedin.com"
@@ -66,7 +68,7 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-blue-700"
               >
-                <Linkedin className="text-2xl" />
+                <Linkedin className="w-5 h-5" />
               </a>
             </div>
           </div>

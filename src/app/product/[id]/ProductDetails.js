@@ -30,7 +30,7 @@ export const ProductDetails = () => {
               {product?.images?.length <= 1 ? (
                 <img
                   className="h-96 w-full object-cover"
-                  src={product.images?.[0]?.src}
+                  src={product.images?.[0]?.src?.src}
                   alt={product.name}
                 />
               ) : (
@@ -38,9 +38,9 @@ export const ProductDetails = () => {
               )}
             </div>
             <div className="md:px-8 px-4 flex flex-col justify-end">
-              {/* <div className="text-sm text-blue-600 font-semibold tracking-wide uppercase">
+              <div className="text-sm text-blue-600 font-semibold tracking-wide">
                 {product.category}
-              </div> */}
+              </div>
               <h2 className="mt-2 md:text-5xl text-3xl font-bold text-gray-900">
                 {product.name}
               </h2>
@@ -83,33 +83,64 @@ export const ProductDetails = () => {
               nature compared to other steroids. It has several potential
               benefits, which include:
             </p> */}
+            <div className="p-4">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                Dosing Information
+              </h2>
 
-            {Object.entries(product?.about).map(
-              ([key, { description, benefits }]) => (
-                <div key={key} className="p-4">
-                  <h2 className="text-xl font-semibold text-gray-800">{key}</h2>
-                  <p className="mt-2 text-gray-600">{description}</p>
-                  <div className="mt-4 space-y-2">
-                    {benefits.map((benefit, index) => (
-                      <div
-                        key={index}
-                        className="flex items-start space-x-2 justify-start"
-                      >
-                        <Check size={20} className="text-green-500 font-bold" />
-                        <div>
-                          <div className="">
-                            <h3 className="font-bold text-gray-700">
-                              {benefit.label}
-                            </h3>
+              <ul className="list-disc list-inside space-y-2">
+                {product?.dosing?.map((dose, index) => (
+                  <li key={index}>
+                    <span className="font-semibold text-gray-700">
+                      {dose?.label}
+                    </span>
+                    <span className="text-gray-600">{dose.description}</span>
+                  </li>
+                ))}
+                <li>
+                  <span className="font-semibold text-gray-700">
+                    PCT-Matrix:
+                  </span>
+                  <span className="text-gray-600"> 2 tablets every day</span>
+                </li>
+              </ul>
+            </div>
+
+            {product?.about &&
+              Object.entries(product?.about)?.map(
+                ([key, { description, benefits }]) => (
+                  <div key={key} className="p-4">
+                    <h2 className="text-xl font-semibold text-gray-800">
+                      {key}
+                    </h2>
+                    <p className="mt-2 text-gray-600">{description}</p>
+                    <div className="mt-4 space-y-2">
+                      {benefits.map((benefit, index) => (
+                        <div
+                          key={index}
+                          className="flex items-start space-x-2 justify-start"
+                        >
+                          <div>
+                            <div className="flex justify-start items-start gap-2">
+                              <Check
+                                size={16}
+                                className="text-green-500 font-bold"
+                              />
+                              <h3 className="font-bold text-gray-700">
+                                {benefit.label}
+                              </h3>
+                            </div>
+
+                            <p className="text-gray-500 ml-6">
+                              {benefit.description}
+                            </p>
                           </div>
-                          <p className="text-gray-500">{benefit.description}</p>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )
-            )}
+                )
+              )}
           </div>
         </div>
       </div>

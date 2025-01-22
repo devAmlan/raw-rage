@@ -7,17 +7,17 @@ const Footer = () => {
       <div className="w-full md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo Section */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-start">
             <div className="text-2xl font-bold">RawRage</div>
-            <p className="mt-2 text-sm text-gray-400 text-center md:text-left">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, at.
+            <p className="mt-2 text-sm text-gray-400 text-left">
+              Amplify Results, Awaken the Champion Within.
             </p>
           </div>
 
           {/* Links Section */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col md:items-center items-start">
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
-            <nav className="flex flex-col space-y-2">
+            <nav className="flex flex-col space-y-2 md:ml-4 ml-0">
               <a
                 href="/privacy"
                 className="hover:text-blue-400 transition-colors"
@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Section */}
-          <div className="flex flex-col items-center md:items-end">
+          <div className="flex flex-col md:items-end items-start">
             <h3 className="font-semibold text-lg mb-4">Connect With Us</h3>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-blue-400 transition-colors">

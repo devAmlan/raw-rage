@@ -21,7 +21,7 @@ const ImageSlider = (props) => {
 
   return (
     <div className="relative w-full">
-      <div className="relative h-96 overflow-hidden rounded-lg">
+      <div className="relative md:h-[700px] h-52 overflow-hidden">
         {images.map((image, index) => (
           <div
             key={index}
@@ -33,9 +33,9 @@ const ImageSlider = (props) => {
             }}
           >
             <img
-              src={image?.src?.src}
+              src={image.src.src}
               alt={image.alt}
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-cover object-contain"
             />
           </div>
         ))}

@@ -13,7 +13,7 @@ export const ProductCard = ({ product }) => {
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
       <Link href={`/product/${product.slug}`}>
         <img
-          src={product.images?.[0]?.src}
+          src={product.images?.[0]?.src?.src}
           alt={product.name}
           className="w-full h-48 object-cover"
         />

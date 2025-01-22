@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -25,8 +25,17 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   const { totalItems } = useCartStore();
+
   const router = useRouter();
+
+  const onClickRedirect = (path) => {
+    router.push(path);
+    setOpen(false);
+  };
+
   return (
     <div className="border-b">
       <div className="flex h-16 items-center px-4 container mx-auto">
@@ -73,6 +82,19 @@ const Navbar = () => {
                           </p>
                         </Link>
                       </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          href="/product/pct"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">
+                            PCTs
+                          </div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Ultimate PCT Stack: Goodbye to Gynaecomastia
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
                     </div>
                   </div>
                 </NavigationMenuContent>
@@ -115,34 +137,55 @@ const Navbar = () => {
             </Button>
           </div>
 
-          <div className="md:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-5 w-5" />
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" onClick={() => setOpen(true)}>
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right">
+              <SheetHeader>
+                <SheetTitle>Menu</SheetTitle>
+              </SheetHeader>
+              <div className="flex flex-col space-y-4 mt-4">
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  onClick={() => onClickRedirect("/product/smra")}
+                >
+                  SMRAs
                 </Button>
-              </SheetTrigger>
-              <SheetContent side="right">
-                <SheetHeader>
-                  <SheetTitle>Menu</SheetTitle>
-                </SheetHeader>
-                <div className="flex flex-col space-y-4 mt-4">
-                  <Button variant="ghost" className="justify-start">
-                    SMRAs
-                  </Button>
-                  <Button variant="ghost" className="justify-start">
-                    Steroids
-                  </Button>
-                  <Button variant="ghost" className="justify-start">
-                    About
-                  </Button>
-                  <Button variant="ghost" className="justify-start">
-                    Contact
-                  </Button>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  onClick={() => onClickRedirect("/product/steroids")}
+                >
+                  Steroids
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  onClick={() => onClickRedirect("/product/pct")}
+                >
+                  PCTs
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  onClick={() => onClickRedirect("/about")}
+                >
+                  About
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  onClick={() => onClickRedirect("/contact")}
+                >
+                  Contact
+                </Button>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </div>
